@@ -1,0 +1,41 @@
+sudo apt update
+
+sudo apt upgrade
+
+splunk commands 
+----------------
+
+sudo dpkg -i splunk-*.deb
+
+sudo apt --fix-broken install 
+
+sudo ./splunk start --accept-license
+
+universal forwarder
+------------------
+
+sudo tar -xvzf splunkforwarderfilename.tgz -C /opt
+
+sudo ./splunk start --accept-license
+
+sudo ./splunk add forward-server 127.0.0.1:portnumber 
+
+sudo ./splunk add monitor -auth username:password log files folder (/var/log/snort)
+
+sudo ./splunk list forward-server
+
+
+snort commands
+--------------
+
+sudo apt install snort
+
+sudo -version
+
+sudo mkdir -p /var/log/snort
+sudo chmod 777 /var/log/snort 
+sudo nano /etc/snort/rules/local.rules
+sudo snort.conf
+sudo snort -A full -A console -A fast -q -u snort -c /etc/snort/snort.conf -i enp0s3
+
+
